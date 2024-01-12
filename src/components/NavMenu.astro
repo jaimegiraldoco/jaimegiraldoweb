@@ -1,0 +1,67 @@
+<div class="menu peer sm:hidden text-white group-[.scrolled]:text-current">
+  <input aria-label="menu checkbox" type="checkbox" class="checker">
+  <div class="line edge"></div>
+  <div class="line center"></div>
+  <div class="line center"></div>
+  <div class="line edge"></div>
+</div>
+<nav class="hidden absolute top-full inset-x-0 sm:relative peer-has-[:checked]:flex sm:flex justify-between items-end sm:items-center sm:gap-6 pt-2 pb-5 px-6 sm:py-0 sm:px-0 group-[.scrolled]:bg-white sm:group-[.scrolled]:bg-transparent sm:shadow-none sm:group-[.scrolled]:shadow-none group-[.scrolled]:shadow-md text-lg text-white group-[.scrolled]:text-current">
+  <slot />
+</nav>
+
+<style>
+.menu {
+	/* Put whatever size you want */
+	--menu-size: 24px;
+	--menu-line-height: 2px;
+
+	position: relative;
+	width: var(--menu-size);
+	aspect-ratio: 1 / 0.9;
+	min-width: 20px;
+	min-height: 18px;
+}
+
+.menu .checker {
+	position: absolute;
+	top: -5%;
+	left: -5%;
+	width: 100%;
+	height: 100%;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.menu .line {
+	position: absolute;
+	width: 100%;
+	height: var(--menu-line-height);
+	background-color: currentColor;
+	transition: transform 0.25s ease-in-out;
+}
+
+.menu .edge:nth-of-type(4) {
+	bottom: 0;
+}
+
+.checker:checked ~ .edge {
+	transform: scaleX(0);
+}
+
+.menu .center {
+	/* Pixel Perfect Top Aligment */
+	top: calc(50% - var(--menu-line-height) * 0.5);
+	transform-origin: center;
+}
+
+.checker:checked ~ .center:nth-of-type(2) {
+	transform: rotate(45deg);
+}
+
+.checker:checked ~ .center:nth-of-type(3) {
+	transform: rotate(-45deg);
+}
+</style>

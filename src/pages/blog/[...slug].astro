@@ -1,0 +1,15 @@
+---
+import BlogPost from "@/layouts/BlogPost.astro"
+import { getPosts } from "@/utils/posts"
+
+const posts = await getPosts(
+  '*[_type == "post"]{title, body, "slug": slug.current, "pubDate": _createdAt, "updatedDate": _updatedAt, "imageUrl": mainImage.asset->url, "categories": categories[]->title} | order(pubDate desc)',
+  ["slug", "title", "body", "pubDate", "updatedDate", "imageUrl", "categories"]
+)
+
+const { slug } = Astro.params
+const post = posts.find((post) => post.slug === slug)
+if (!post) return Astro.redirect("/404")
+---
+
+<BlogPost {...post} />

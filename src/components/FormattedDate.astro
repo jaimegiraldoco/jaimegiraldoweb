@@ -1,0 +1,19 @@
+---
+interface Props {
+	date: Date;
+	showTime?: boolean;
+}
+
+const { date, showTime = false } = Astro.props as Props;
+const options: Intl.DateTimeFormatOptions = showTime
+	? { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }
+	: { year: 'numeric', month: 'long', day: 'numeric' };
+---
+
+<time datetime={date.toISOString()}>
+	{
+		showTime
+			? date.toLocaleDateString('es-CO', options)
+			: date.toLocaleDateString('es-CO', options)
+	}
+</time>

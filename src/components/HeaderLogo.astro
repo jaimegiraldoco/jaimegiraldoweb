@@ -1,0 +1,67 @@
+---
+interface Props {
+  size?: number
+  class?: string
+}
+
+const { size = 60, class: className = "" } = Astro.props
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.2"
+  viewBox="0 0 161 161"
+  width={size}
+  height={size}
+  class={className}
+>
+  <circle
+    cx="80.5"
+    cy="80.5"
+    r="80"
+    fill="white"
+    class:list={["group-[.scrolled]:fill-sail-950"]}></circle>
+  <path
+    class="group-[.scrolled]:fill-[white] group-[.scrolled]:stroke-[white]"
+    stroke="#1b2c50"
+    stroke-width="2"
+    fill="#1b2c50"
+    d="
+					M 65.77 117.20
+					C 39.40 106.74 32.91 70.01 55.56 50.85
+					C 74.45 34.87 106.79 39.80 115.73 64.67
+					Q 115.89 65.12 115.41 65.13
+					L 112.71 65.16
+					Q 112.13 65.17 111.90 64.64
+					Q 104.85 48.95 87.70 45.90
+					C 66.61 42.15 47.86 56.28 45.76 77.74
+					C 44.71 88.51 48.58 99.15 56.34 106.75
+					C 68.73 118.89 89.94 120.23 103.65 108.51
+					Q 104.28 107.96 104.24 108.80
+					L 104.06 112.54
+					Q 104.03 113.11 103.56 113.42
+					C 92.10 120.90 78.53 122.25 65.77 117.20
+					Z"
+  ></path>
+  <path
+    class="group-[.scrolled]:fill-[white] group-[.scrolled]:stroke-[white]"
+    stroke="#1b2c50"
+    stroke-width="2"
+    fill="#1b2c50"
+    d="
+					M 111.90 96.83
+					L 93.18 96.79
+					A 0.38 0.38 0.0 0 1 92.80 96.39
+					L 92.94 93.14
+					A 0.38 0.38 0.0 0 1 93.32 92.78
+					L 115.62 92.78
+					A 0.38 0.38 0.0 0 1 116.00 93.16
+					L 115.98 119.65
+					A 0.38 0.38 0.0 0 1 115.62 120.03
+					L 112.73 120.20
+					A 0.38 0.38 0.0 0 1 112.33 119.82
+					L 112.28 97.21
+					A 0.38 0.38 0.0 0 0 111.90 96.83
+					Z"
+  ></path>
+</svg>

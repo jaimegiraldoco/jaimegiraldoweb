@@ -1,0 +1,217 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import { SITE_TITLE } from '../consts'
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead
+      title={`Perfil - ${SITE_TITLE}`}
+      description="Una breve descripción sobre mi vida y mi carrera profesional."
+    />
+  </head>
+  <body>
+    <Header />
+    <main
+      class="flex flex-col items-center gap-14 mt-24 pt-10 pb-20 px-6 sm:px-10 mx-auto w-full"
+    >
+      <div class="flex flex-col items-center gap-8 w-full max-w-5xl">
+        <h1 class="text-5xl text-center text-calypso-900 font-bold">
+          Jaime Andrés Giraldo Martínez
+        </h1>
+        <img
+          width={380}
+          height={380}
+          src="/home-image.jpg"
+          alt="Jaime Giraldo exposing his ideas in a conference"
+          class="mx-auto w-96 aspect-square object-cover object-right rounded-xl shadow-lg shadow-potters-600/40"
+        />
+      </div>
+      <!-- Description -->
+      <div
+        class="flex flex-col gap-5 mx-auto w-full text-lg leading-loose max-w-5xl"
+      >
+        <h2 class="text-3xl font-semibold">Acerca de Jaime Giraldo</h2>
+        <p>
+          Es administrador de negocios internacionales, con máster en Gerencia
+          de Negocios y Organizaciones. Se ha destacado como líder en gestión de
+          conocimiento y de la innovación a nivel local y nacional. Con su
+          trayectoria en el diseño, ejecución y evaluación de proyectos, Jaime
+          ha demostrado su capacidad de impulsar proyectos estratégicos para el
+          sector público y privado.
+        </p>
+        <p>
+          Durante 6 años, ocupó el cargo de director de Ciencia, Tecnología e
+          Innovación en la Gobernación del Atlántico, desempeñando un papel
+          fundamental en el desarrollo de capacidades en CTeI de la región.
+          También hizo parte de ProBarranquilla, donde apoyó el diseño y la
+          implementación de estrategias de atracción de inversión al territorio.
+        </p>
+        <p>
+          En Fundación Promigas, donde actualmente ocupa el cargo de coordinador
+          de Gestión del Conocimiento, hizo parte del equipo asesor para
+          materializar el primer Índice Multidimensional de Pobreza Energética –
+          IMPE.
+        </p>
+        <p>
+          Además de su trabajo en el ámbito empresarial, es docente
+          universitario de la Universidad del Norte de Barranquilla.
+        </p>
+      </div>
+      <!-- Experience -->
+      <div
+        class="flex flex-col gap-8 mx-auto w-full max-w-5xl text-lg leading-loose"
+      >
+        <h2 class="text-3xl font-semibold">Experiencia Profesional</h2>
+        <ul class="flex flex-col gap-8">
+          <li class="flex flex-col gap-3">
+            <h3 class="text-xl font-bold">FUNDACIÓN PROMIGAS</h3>
+            <h4 class="flex flex-col gap-2 leading-none">
+              <span class="font-semibold"
+                >Coordinador de Gestión de Conocimiento</span
+              >
+              <span class="font-medium">(Junio de 2021 – Actualmente)</span>
+            </h4>
+            <p class="leading-loose">
+              Diseñar y promover estrategias de gestión de conocimiento e
+              innovación, crear indicadores y tableros de control, hacer
+              seguimiento y evaluación de programas y proyectos. Se busca
+              asegurar que las propuestas tengan elementos para medir el éxito,
+              mejorar el modelo de intervención y alinear con la estrategia de
+              sostenibilidad de la Fundación Promigas.
+            </p>
+          </li>
+          <li class="flex flex-col gap-3">
+            <h3 class="text-xl font-bold">
+              FUNDACIÓN CENTRO DE EXCELENCIA EN SISTEMAS DE INNOVACIÓN
+            </h3>
+            <h4 class="flex flex-col gap-2 leading-none">
+              <span class="font-semibold"
+                >Gerente del Programa de Innovación Agro</span
+              >
+              <span class="font-medium"
+                >(Diciembre de 2020 – Junio de 2021)</span
+              >
+            </h4>
+            <p class="leading-loose">
+              Dirigir y coordinar las actividades desarrolladas en el marco del
+              programa. Acompañar, monitorear y evaluar las actividades de todas
+              las áreas (sub-proyectos) del programa. Asegurar la visibilidad
+              interna y externa del programa. Ser miembro del panel evaluador
+              encargado de seleccionar a los proveedores de conocimiento.
+            </p>
+            <h4 class="flex flex-col gap-2 mt-2 leading-none">
+              <span class="font-semibold">Consultor en Innovación</span>
+              <span class="font-medium"
+                >(Septiembre de 2020 – Noviembre de 2020)</span
+              >
+            </h4>
+            <p class="leading-loose">
+              Mentorías a 20 empresas beneficiarias del programa Sistemas de
+              Innovación para la creación de Unidades de I+D+i y en su
+              estrategia y/o sistema de gestión de la innovación y para el
+              diseño de nuevos productos y servicios. Coordinación operativa de
+              actividades en proyectos de innovación.
+            </p>
+          </li>
+          <li class="flex flex-col gap-3">
+            <h3 class="text-xl font-bold">
+              COMISIÓN REGIONAL DE COMPETITIVIDAD E INNOVACIÓN DEL ATLÁNTICO
+            </h3>
+            <h4 class="flex flex-col gap-2 leading-none">
+              <span class="font-semibold">Consultor Externo</span>
+              <span class="font-medium">(Julio de 2020 – Junio de 2021)</span>
+            </h4>
+            <p class="leading-loose">
+              Consultor externo de la Secretaría Técnica de la Comisión Regional
+              de Competitividad e Innovación del departamento del Atlántico en
+              temas de innovación, emprendimiento, desarrollo económico y
+              empresarial.
+            </p>
+          </li>
+          <li class="flex flex-col gap-3">
+            <h3 class="text-xl font-bold">CONVERGING TECHNOLOGIES S.A.S</h3>
+            <h4 class="flex flex-col gap-2 leading-none">
+              <span class="font-semibold">Asesor de Innovación</span>
+              <span class="font-medium">(Julio de 2020 – Junio de 2021)</span>
+            </h4>
+            <p class="leading-loose">
+              Asesorar a la gerencia y al equipo de trabajo en la estrategia de
+              innovación y en los proyectos de innovación propios y de sus
+              clientes. Apoyar el desarrollo de nuevos productos y servicios de
+              la empresa y de sus clientes. Apoyar la expansión del mercado y el
+              desarrollo de nuevas líneas de negocio. Articular soluciones a
+              retos de innovación con otros actores del ecosistema.
+            </p>
+            <h4 class="flex flex-col gap-2 leading-none">
+              <span class="font-semibold">Gerente</span>
+              <span class="font-medium">(Noviembre 2014 – Octubre 2019)</span>
+            </h4>
+            <p class="leading-loose">
+              Direccionamiento estratégico, coordinación de equipo y proyectos
+              claves, identificación y gestión de nuevos negocios, supervisión
+              de la operación de las áreas de gestión empresarial, ciencia,
+              tecnología e innovación y Negocios Internacionales. Asesor líder
+              de empresas y Universidades en Proyectos de planeación estratégica
+              y de ciencia, tecnología e innovación.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <!-- Education -->
+      <div
+        class="flex flex-col gap-6 mx-auto w-full max-w-5xl text-lg leading-loose"
+      >
+        <h2 class="text-3xl font-semibold">Formación Académica</h2>
+        <ul class="flex flex-col gap-4">
+          <li class="flex flex-col gap-1">
+            <h3 class="text-xl font-semibold">
+              Magíster de Comercio en Gerencia de Negocios y Organizaciones
+            </h3>
+            <h4>Macquarie University, 2011</h4>
+          </li>
+          <li class="flex flex-col gap-1">
+            <h3 class="text-xl font-semibold">
+              Administración de Negocios Internacionales
+            </h3>
+            <h4>Universidad de la Sabana, 2011</h4>
+          </li>
+          <li class="flex flex-col gap-1">
+            <h3 class="text-xl font-semibold">
+              High School Degree (Toledo, OH, EU)
+            </h3>
+            <h4>Robert S. Rogers High School, 2006</h4>
+          </li>
+        </ul>
+      </div>
+      <!-- Languages -->
+      <div
+        class="flex flex-col gap-6 mx-auto w-full max-w-5xl text-lg leading-loose"
+      >
+        <h2 class="text-3xl font-semibold">Idiomas</h2>
+        <ul class="flex flex-col gap-4">
+          <li class="flex flex-col gap-1">
+            <h3 class="text-xl font-semibold">Portugués (Nivel V)</h3>
+            <h4>Universidad del Norte, 2014</h4>
+          </li>
+          <li class="flex flex-col gap-1">
+            <h3 class="text-xl font-semibold">Inglés (Avanzado)</h3>
+            <h4>IELTS, 2010</h4>
+          </li>
+          <li class="flex flex-col gap-1">
+            <h3 class="text-xl font-semibold">ALEMÁN (Avanzado)</h3>
+            <h4>SprachDiplom Stufe II. Colegio Alemán Barranquilla, 2004</h4>
+          </li>
+          <li class="flex flex-col gap-1">
+            <h3 class="text-xl font-semibold">ALEMÁN (Intermedio)</h3>
+            <h4>SprachDiplom Stufe I. Colegio Alemán Barranquilla, 2002</h4>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

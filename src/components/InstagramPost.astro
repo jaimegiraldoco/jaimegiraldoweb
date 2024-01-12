@@ -1,0 +1,110 @@
+---
+interface Props {
+  postUrl: string
+}
+
+const { postUrl } = Astro.props
+---
+
+<blockquote
+  data-instgrm-permalink={postUrl}
+  data-instgrm-version="14"
+  class="instagram-media max-w-[250px] min-w-[200px] w-full bg-white border-none rounded drop-shadow-md"
+  style="box-shadow: 0 -1px 3px #0002;"
+>
+  <a
+    href={postUrl}
+    class="flex flex-col p-4 w-full min-h-[22rem]"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <div class="flex items-center gap-3.5">
+      <div class="grow-0 w-10 h-10 bg-gray-200 rounded-full"></div>
+      <div class="grow flex flex-col gap-1.5 justify-center">
+        <div class="grow-0 w-28 h-3.5 bg-gray-200 rounded"></div>
+        <div class="grow-0 w-16 h-3.5 bg-gray-200 rounded"></div>
+      </div>
+    </div>
+    <div class="grow flex flex-col justify-center items-center gap-3">
+      <span class="block h-12 w-12 text-gray-400">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
+          ></path>
+          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+          <path d="M16.5 7.5l0 .01"></path>
+        </svg>
+      </span>
+      <p class="text-blue-500/80 text-center font-medium">
+        Ver esta publicación en Instagram
+      </p>
+    </div>
+    <div class="flex justify-between items-center text-gray-200">
+      <div class="flex items-center gap-2">
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
+            ></path>
+          </svg>
+        </span>
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1"
+            ></path>
+          </svg>
+        </span>
+      </div>
+      <span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M18 7v14l-6 -4l-6 4v-14a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4z"
+          ></path>
+        </svg>
+      </span>
+    </div>
+  </a>
+</blockquote>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jaimegiraldo.co/sitemap-index.xml

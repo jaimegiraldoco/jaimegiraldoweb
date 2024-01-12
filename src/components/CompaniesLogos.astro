@@ -1,0 +1,95 @@
+---
+const images = [
+  "aaa-logo.png",
+  "acopi-logo.png",
+  "atlanticonnect-logo.png",
+  "camarabaq-logo.jpg",
+  "caribe-exponencial-logo.png",
+  "catalitico-logo.png",
+  "certa-internacional-logo.jpg",
+  "cientech-logo.webp",
+  "cluster-turismo-naturaleza-atl-logo.png",
+  "cofca-logo.png",
+  "contacta-logo.webp",
+  "converging-logo.jpg",
+  "core-logo.jpg",
+  "crci-logo.webp",
+  "eticos-logo.jpg",
+  "extreme-tech-logo.png",
+  "fundacion-promigas-logo.png",
+  "fundacion-santo-domingo-logo.png",
+  "fundesarrollo-logo-small.png",
+  "fundesarrollo-logo.png",
+  "gobernacion-logo.jpg",
+  "granabastos-logo.png",
+  "inclusion-sas-logo.png",
+  "indutronica-logo.png",
+  "inhios-logo.png",
+  "isa-transelca-logo.jpg",
+  "kubera-motivacion-logo.jpg",
+  "lecta-logo.jpg",
+  "macondolab-logo.png",
+  "mega-tiendas-logo.png",
+  "merco-logo.png",
+  "minciencias-logo.png",
+  "molipeter-logo.png",
+  "nativapps-logo.png",
+  "opensky-logo.png",
+  "palermo-tanks-logo.png",
+  "phycore-logo.png",
+  "probaq-logo.png",
+  "probienestar-logo.png",
+  "procaps-logo.png",
+  "promigas-logo.png",
+  "sumind-logo.png",
+  "suntech-logo.jpg",
+  "transquiroga-logo.png",
+  "uninorte-logo.png",
+  "unisimon-logo.png",
+  "verticali-logo.png"
+]
+---
+
+<div class="marquee">
+  <div class="inline-block pl-[100%] w-fit h-full">
+    {
+      images.map((image) => (
+        <img
+          src=`/logos/${image}`
+          alt={image.split(".")[0]}
+          title={image.split(".")[0]}
+          class="inline-block mr-32 max-w-[200px] max-h-[200px]"
+        />
+      ))
+    }
+  </div>
+</div>
+
+<style>
+.marquee {
+  width: 100%;
+  height: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee div {
+  animation: marquee 120s linear infinite;
+}
+
+.marquee div:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee div {
+    animation-iteration-count: 1;
+    animation-duration: 0.01;
+  }
+}
+</style>

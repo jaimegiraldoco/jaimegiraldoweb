@@ -1,0 +1,282 @@
+---
+import BaseHead from "@/components/BaseHead.astro"
+import Header from "@/components/Header.astro"
+import Footer from "@/components/Footer.astro"
+import InstagramPost from "@/components/InstagramPost.astro"
+import CompaniesLogos from "@/components/CompaniesLogos.astro"
+import PortableText from "@/components/PortableText.astro"
+import { getInstagramPosts } from "@/utils/instagramAPI"
+import { getParagraphs } from "@/utils/posts"
+import { HERO_IMAGE, VIDEO_IMAGE } from "@/consts"
+
+const PARAGRAPHS = await getParagraphs()
+const displayContent = (title: string) =>
+  PARAGRAPHS.find((paragraph) => paragraph.name === title)?.body
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead />
+  </head>
+  <body>
+    <Header class="on-index bg-transparent" />
+    <!-- Hero Image -->
+    <div class="absolute top-0 w-full h-screen -z-10">
+      <img
+        src={HERO_IMAGE}
+        alt="Jaime Giraldo posing in front of a building"
+        class="w-full h-[120%] object-cover object-[top_0_right_10%] filter brightness-[55%]"
+      />
+    </div>
+    <main class="w-full mt-24">
+      <!-- Hero Section -->
+      <section
+        class="hero-section flex flex-col items-start gap-8 sm:gap-12 pt-20 md:pt-20 px-8 sm:px-14 text-white"
+      >
+        <h1 class="text-6xl xs:text-7xl sm:text-8xl font-[700]">
+          <PortableText portableText={displayContent("HERO_SECTION_TITLE")} />
+        </h1>
+        <span class="max-w-[50ch] text-xl md:text-2xl leading-relaxed">
+          <PortableText
+            portableText={displayContent("HERO_SECTION_DESCRIPTION")}
+          />
+        </span>
+        <a
+          href="/blog"
+          class="py-[0.75em] px-[2em] bg-sail-400 hover:bg-sail-500 rounded-md text-xl text-midnight-950 font-medium hover:scale-110 transition ease-out"
+        >
+          <PortableText portableText={displayContent("HERO_SECTION_BUTTON")} />
+        </a>
+      </section>
+      <!-- Introduction Section -->
+      <section
+        class="relative flex flex-col items-center gap-8 sm:-mt-8 md:-mt-14 pt-12 pb-12 lg:pt-12 px-8 xs:px-14"
+      >
+        <div class="clipped absolute top-10 w-full h-full bg-midnight-950">
+        </div>
+        <article
+          class="flex flex-col items-center gap-10 lg:gap-16 max-w-6xl z-10 text-white"
+        >
+          <div
+            class="flex flex-col lg:flex-row-reverse justify-center items-center lg:items-start gap-10 lg:gap-16"
+          >
+            <div
+              class="flex justify-center w-4/5 max-w-sm lg:w-2/5 aspect-[4/5] rounded-md text-white"
+            >
+              <svg viewBox="0 0 800 1277.23" width="200px">
+                <path
+                  class="logo-path"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="32"
+                  d="m414.67,890.47c-139.76,0-249.67-108.72-249.67-251.27s109.91-252.45,249.67-252.45c101.95,0,186.75,52.57,219.41,141.75h31.46c-33.45-107.11-135-170.83-250.47-170.83-157.29,0-280.72,124.23-280.72,281.52s123.44,280.34,280.72,280.34c68.15,0,124.01-20.68,167.07-54.19v-38.73c-40.05,38.36-96.19,63.84-167.47,63.84"
+                ></path>
+                <polygon
+                  class="logo-polygon"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="32"
+                  points="665.66 722.37 498.63 722.37 498.63 752.66 635.35 752.66 635.35 919.54 665.66 919.54 665.66 722.37"
+                ></polygon>
+              </svg>
+            </div>
+            <div class="flex flex-col gap-5 lg:pt-20 lg:w-2/5">
+              <h2 class="flex flex-col">
+                <span class="text-xl font-medium">
+                  <PortableText
+                    portableText={displayContent(
+                      "INTRODUCTION_SECTION_SUP_TITLE"
+                    )}
+                  />
+                </span>
+                <span class="text-3xl font-semibold">
+                  <PortableText
+                    portableText={displayContent("INTRODUCTION_SECTION_TITLE")}
+                  />
+                </span>
+              </h2>
+              <div
+                class="flex flex-col gap-4 text-xl leading-relaxed font-light"
+              >
+                <PortableText
+                  portableText={displayContent(
+                    "INTRODUCTION_SECTION_DESCRIPTION"
+                  )}
+                />
+              </div>
+            </div>
+          </div>
+          <span class="text-xl font-medium italic">
+            <PortableText
+              portableText={displayContent("INTRODUCTION_SECTION_FOOT_TEXT")}
+            />
+          </span>
+        </article>
+      </section>
+
+      <!-- Calendly Section -->
+      <section
+        id="schedule"
+        class="flex flex-col items-center mt-10 py-20 px-14 bg-sail-200 scroll-mt-20"
+      >
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div
+            class="text-midnight-950 text-3xl text-center md:text-left font-medium"
+          >
+            <PortableText
+              portableText={displayContent("CALENDLY_SECTION_TITLE")}
+            />
+          </div>
+          <a
+            href="https://calendly.com/jaimegiraldoco"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="shrink-0 py-[0.75em] px-[2em] bg-sail-400 hover:bg-sail-500 rounded-md text-xl text-midnight-950 font-medium hover:scale-110 transition ease-out"
+          >
+            <PortableText
+              portableText={displayContent("CALENDLY_SECTION_BUTTON")}
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- Video Section -->
+      <section class="flex flex-col items-center py-20 px-6">
+        <video
+          poster="/promocional-video/poster.jpg"
+          class="w-full max-w-3xl aspect-video bg-black z-10"
+          preload="auto"
+          controls
+          playsinline
+          autoplay
+          loop
+          muted
+        >
+          <source src="/promocional-video/video.mp4" type="video/mp4" />
+        </video>
+      </section>
+
+      <!-- Instagram Posts Section -->
+      <section class="relative flex flex-col items-center py-24 px-6">
+        <!-- Socials Image -->
+        <div
+          class="clipped-rl hidden sm:block absolute -top-4 -translate-y-40 md:-translate-y-96 w-full h-[250%] max-w-[1600px]"
+        >
+          <img
+            src={VIDEO_IMAGE}
+            alt="Jaime Giraldo exposing his ideas in a conference"
+            class="w-full object-cover object-[top_0_right_0] filter brightness-[55%]"
+          />
+        </div>
+        <div class="flex flex-wrap justify-center items-start gap-14">
+          {
+            (await getInstagramPosts()).map((post) => (
+              <InstagramPost postUrl={post.permalink} />
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- Companies Section -->
+      <section class="flex flex-col items-center gap-10 py-14 pb-24 px-6">
+        <h2 class="flex flex-col text-center">
+          <span class="text-4xl xs:text-5xl text-midnight-950 font-medium"
+            >Colaboraciones</span
+          >
+        </h2>
+        <CompaniesLogos />
+      </section>
+    </main>
+    <Footer />
+
+    <!-- Sticky Header -->
+    <script>
+      ;(function () {
+        const header = document.querySelector("header")!
+        window.addEventListener("scroll", updateStylesOnScroll)
+        window.addEventListener("load", updateStylesOnScroll)
+
+        function updateStylesOnScroll() {
+          if (!header.classList.contains("on-index")) return
+
+          if (window.scrollY > 20) {
+            header.style.backgroundColor = "white"
+            header.classList.add("shadow-md")
+            header.classList.add("scrolled")
+          } else {
+            header.style.backgroundColor = "transparent"
+            header.classList.remove("shadow-md")
+            header.classList.remove("scrolled")
+          }
+        }
+      })()
+    </script>
+
+    <!-- Clipping Polygons -->
+    <style>
+      .clipped {
+        -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+      }
+
+      .clipped-rl {
+        -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+      }
+
+      @media (min-width: 768px) {
+        .clipped {
+          -webkit-clip-path: polygon(0 0, 100% 18%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 18%, 100% 100%, 0% 100%);
+        }
+
+        .clipped-rl {
+          -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+        }
+      }
+
+      @media (orientation: portrait) and (min-width: 390px) {
+        .hero-section {
+          height: 75vh;
+        }
+      }
+
+      @media (orientation: landscape) and (min-height: 600px) {
+        .hero-section {
+          height: 85vh;
+        }
+      }
+
+      .logo-path {
+        stroke-dasharray: 2711;
+        stroke-dashoffset: 2711;
+        animation: dash 3s ease-out alternate infinite;
+      }
+      .logo-polygon {
+        stroke-dasharray: 728;
+        stroke-dashoffset: 728;
+        animation: dash-2 3s ease-out alternate infinite;
+      }
+
+      @keyframes dash {
+        from {
+          stroke-dashoffset: 2710;
+        }
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes dash-2 {
+        from {
+          stroke-dashoffset: 720;
+        }
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </body>
+</html>

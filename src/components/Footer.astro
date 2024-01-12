@@ -1,0 +1,86 @@
+---
+import HeaderLogo from "./HeaderLogo.astro"
+const today = new Date()
+---
+
+<footer
+  class="flex flex-col sm:flex-row sm:flex-wrap gap-12 py-12 px-10 md:px-20 bg-midnight-950 text-white"
+>
+  <div class="flex flex-col gap-4 md:gap-8 w-full max-w-[335px] border-white">
+    <div class="shrink-0 group scrolled flex flex-wrap items-center gap-4">
+      <HeaderLogo size={60} class="fill-sail-500" />
+      <span class="text-lg">
+        Jaime Giraldo &copy; {today.getFullYear()}
+        <br />
+         Todos los derechos reservados
+      </span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a
+        href="https://www.linkedin.com/in/jaimegiraldoco"
+        target="_blank"
+        referrerpolicy="no-referrer"
+      >
+        <span class="sr-only">Follow Jaime Giraldo on Linkedin</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true" width="38" height="38">
+          <path
+            fill="currentColor"
+            d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+          ></path>
+        </svg>
+      </a>
+      <a
+        href="https://twitter.com/jaimegiraldoCO"
+        target="_blank"
+        referrerpolicy="no-referrer"
+      >
+        <span class="sr-only">Follow Jaime Giraldo on Twitter</span>
+        <svg
+          width="40px"
+          height="30px"
+          viewBox="0 0 640 480"
+          style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+        >
+          <g>
+            <path
+              fill="#fff"
+              d="M 77.5,20.5 C 128.834,20.3333 180.168,20.5 231.5,21C 266.333,67.1667 301.167,113.333 336,159.5C 376.872,113.63 417.372,67.463 457.5,21C 482.507,20.1668 507.507,20.3335 532.5,21.5C 479.393,83.4439 425.726,144.944 371.5,206C 434.641,289.975 497.975,373.808 561.5,457.5C 511.503,458.667 461.503,458.833 411.5,458C 372.788,407.41 333.954,356.91 295,306.5C 250.715,356.906 206.549,407.406 162.5,458C 137.493,458.833 112.493,458.666 87.5,457.5C 144.833,391.5 202.167,325.5 259.5,259.5C 198.573,179.953 137.906,100.287 77.5,20.5 Z M 165.5,64.5 C 179.672,63.1741 194.006,63.1741 208.5,64.5C 296.045,180.423 383.712,296.256 471.5,412C 458.5,412.667 445.5,412.667 432.5,412C 343.843,295.828 254.843,179.994 165.5,64.5 Z"
+            ></path>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="flex flex-col gap-4 sm:mx-auto w-full max-w-[200px]">
+    <h3 class="text-xl uppercase font-semibold">Información</h3>
+    <ul class="flex flex-col gap-3">
+      <li class="text-sm uppercase font-semibold">
+        <a href="/" class="hover:underline">Inicio</a>
+      </li>
+      <li class="text-sm uppercase font-semibold">
+        <a
+          href="https://calendly.com/jaimegiraldoco"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:underline">Agenda una cita</a
+        >
+      </li>
+      <li class="text-sm uppercase font-semibold">
+        <a href="/blog" class="hover:underline">Blog</a>
+      </li>
+    </ul>
+  </div>
+  <div class="flex flex-col gap-4 w-full max-w-[250px]">
+    <h3 class="text-xl uppercase font-semibold">Contáctanos</h3>
+    <ul class="flex flex-col gap-3">
+      <li class="flex flex-col">
+        <h4 class="font-semibold">Correo de contacto:</h4>
+        <p>jaime@jaimegiraldo.co</p>
+      </li>
+      <li class="flex flex-col">
+        <h4 class="font-semibold">Teléfono:</h4>
+        <p>+57 (300) 520-5862</p>
+      </li>
+    </ul>
+  </div>
+</footer>

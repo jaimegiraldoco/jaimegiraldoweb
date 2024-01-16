@@ -27,13 +27,13 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '')
     height: 4px;
     width: 100%;
     background-color: currentColor;
-    transform: scaleX(0);
+    transform: scaleX(0) translateY(-3px);
     transition: transform 0.2s ease-in-out;
   }
   a:hover::after {
-    transform: scaleX(1);
+    transform: scaleX(1) translateY(-3px);
   }
   a.active::after {
-    transform: scaleX(1);
+    transform: scaleX(1) translateY(-3px);
   }
 </style>

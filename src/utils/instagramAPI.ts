@@ -7,6 +7,7 @@ type InstagramPost = {
 }
 export async function getInstagramPosts() {
   const response = await fetch(API_URL)
+  if (!response.ok) return []
   const data = await response.json()
   return data.data as InstagramPost[]
 }

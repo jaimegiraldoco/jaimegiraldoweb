@@ -12,6 +12,8 @@ import { HERO_IMAGE, VIDEO_IMAGE } from "@/consts"
 const PARAGRAPHS = await getParagraphs()
 const displayContent = (title: string) =>
   PARAGRAPHS.find((paragraph) => paragraph.name === title)?.body
+
+const instagramPosts = await getInstagramPosts()
 ---
 
 <!doctype html>
@@ -22,7 +24,7 @@ const displayContent = (title: string) =>
   <body>
     <Header class="on-index bg-transparent" />
     <!-- Hero Image -->
-      <div class="absolute top-0 w-full h-dvh -z-10">
+    <div class="absolute top-0 w-full h-dvh -z-10">
       <img
         src={HERO_IMAGE}
         alt="Jaime Giraldo posing in front of a building"
@@ -51,7 +53,7 @@ const displayContent = (title: string) =>
       </section>
       <!-- Introduction Section -->
       <section
-        class="relative flex flex-col items-center gap-8 pt-12 pb-12 sm:-mt-8  lg:pt-12 px-8 xs:px-14"
+        class="relative flex flex-col items-center gap-8 pt-12 pb-12 sm:-mt-8 lg:pt-12 px-8 xs:px-14"
       >
         <div class="clipped absolute top-16 w-full h-full bg-midnight-950">
         </div>
@@ -171,7 +173,7 @@ const displayContent = (title: string) =>
         </div>
         <div class="flex flex-wrap justify-center items-start gap-14">
           {
-            (await getInstagramPosts()).map((post) => (
+            instagramPosts?.map((post) => (
               <InstagramPost postUrl={post.permalink} />
             ))
           }
@@ -192,7 +194,7 @@ const displayContent = (title: string) =>
 
     <!-- Sticky Header -->
     <script>
-      (function () {
+      ;(function () {
         const header = document.querySelector("header")!
         document.addEventListener("scroll", updateStylesOnScroll)
 

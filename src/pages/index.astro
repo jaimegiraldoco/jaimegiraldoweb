@@ -22,11 +22,11 @@ const displayContent = (title: string) =>
   <body>
     <Header class="on-index bg-transparent" />
     <!-- Hero Image -->
-    <div class="absolute top-0 w-full h-screen -z-10">
+      <div class="absolute top-0 w-full h-dvh -z-10">
       <img
         src={HERO_IMAGE}
         alt="Jaime Giraldo posing in front of a building"
-        class="w-full h-[120%] object-cover object-[top_0_right_10%] filter brightness-[55%]"
+        class="w-full h-[130%] sm:h-[120%] object-cover object-[top_0_right_10%] filter brightness-[55%]"
       />
     </div>
     <main class="w-full mt-24">
@@ -51,12 +51,12 @@ const displayContent = (title: string) =>
       </section>
       <!-- Introduction Section -->
       <section
-        class="relative flex flex-col items-center gap-8 sm:-mt-8 md:-mt-14 pt-12 pb-12 lg:pt-12 px-8 xs:px-14"
+        class="relative flex flex-col items-center gap-8 pt-12 pb-12 sm:-mt-8  lg:pt-12 px-8 xs:px-14"
       >
-        <div class="clipped absolute top-10 w-full h-full bg-midnight-950">
+        <div class="clipped absolute top-16 w-full h-full bg-midnight-950">
         </div>
         <article
-          class="flex flex-col items-center gap-10 lg:gap-16 max-w-6xl z-10 text-white"
+          class="flex flex-col items-center gap-10 lg:gap-16 pt-16 max-w-6xl z-10 text-white"
         >
           <div
             class="flex flex-col lg:flex-row-reverse justify-center items-center lg:items-start gap-10 lg:gap-16"
@@ -118,7 +118,7 @@ const displayContent = (title: string) =>
       <!-- Calendly Section -->
       <section
         id="schedule"
-        class="flex flex-col items-center mt-10 py-20 px-14 bg-sail-200 scroll-mt-20"
+        class="flex flex-col items-center py-24 px-14 bg-sail-200 scroll-mt-20"
       >
         <div class="flex flex-col md:flex-row items-center gap-8">
           <div
@@ -161,7 +161,7 @@ const displayContent = (title: string) =>
       <section class="relative flex flex-col items-center py-24 px-6">
         <!-- Socials Image -->
         <div
-          class="clipped-rl hidden sm:block absolute -top-4 -translate-y-40 md:-translate-y-96 w-full h-[250%] max-w-[1600px]"
+          class="clipped-rl absolute -top-4 -translate-y-40 md:-translate-y-96 w-full h-full max-w-[1600px]"
         >
           <img
             src={VIDEO_IMAGE}
@@ -192,15 +192,14 @@ const displayContent = (title: string) =>
 
     <!-- Sticky Header -->
     <script>
-      ;(function () {
+      (function () {
         const header = document.querySelector("header")!
-        window.addEventListener("scroll", updateStylesOnScroll)
-        window.addEventListener("load", updateStylesOnScroll)
+        document.addEventListener("scroll", updateStylesOnScroll)
 
         function updateStylesOnScroll() {
           if (!header.classList.contains("on-index")) return
 
-          if (window.scrollY > 20) {
+          if (window.scrollY > 100) {
             header.style.backgroundColor = "white"
             header.classList.add("shadow-md")
             header.classList.add("scrolled")
@@ -216,33 +215,26 @@ const displayContent = (title: string) =>
     <!-- Clipping Polygons -->
     <style>
       .clipped {
-        -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
-        clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
       }
 
       .clipped-rl {
-        -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
-        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
       }
 
       @media (min-width: 768px) {
         .clipped {
-          -webkit-clip-path: polygon(0 0, 100% 18%, 100% 100%, 0% 100%);
-          clip-path: polygon(0 0, 100% 18%, 100% 100%, 0% 100%);
+          -webkit-clip-path: polygon(0 0, 100% 13.5%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 13.5%, 100% 100%, 0% 100%);
         }
 
         .clipped-rl {
-          -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
-          clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+          -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
         }
       }
-
-      @media (orientation: portrait) and (min-width: 390px) {
-        .hero-section {
-          height: 75vh;
-        }
-      }
-
       @media (orientation: landscape) and (min-height: 600px) {
         .hero-section {
           height: 85vh;
@@ -268,7 +260,6 @@ const displayContent = (title: string) =>
           stroke-dashoffset: 0;
         }
       }
-
       @keyframes dash-2 {
         from {
           stroke-dashoffset: 720;

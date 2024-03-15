@@ -49,42 +49,15 @@ const images = [
 ]
 ---
 
-<div class="marquee">
-  <div class="inline-block pl-[100%] w-fit h-full">
-    {
-      images.map((image) => (
-        <img
-          src=`/logos/${image}`
-          alt={image.split(".")[0]}
-          title={image.split(".")[0]}
-          class="inline-block mr-32 max-w-[200px] max-h-[200px]"
-        />
-      ))
-    }
-  </div>
-</div>
-
-<style>
-.marquee {
-  width: 100%;
-  height: 200px;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.marquee div {
-  animation: marquee 120s linear infinite;
-}
-
-@keyframes marquee {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-100%, 0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee div {
-    animation-iteration-count: 1;
-    animation-duration: 0.01;
+<div class="flex items-center gap-4 max-w-[80vw] overflow-x-auto">
+  {
+    images.map((image) => (
+      <img
+        src=`/logos/${image}`
+        alt={image.split(".")[0]}
+        title={image.split(".")[0]}
+        class="mr-32 max-w-[200px] max-h-[200px]"
+      />
+    ))
   }
-}
-</style>
+</div>
